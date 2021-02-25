@@ -1,0 +1,23 @@
+{
+  "name": "puppeterdemo",
+  "version": "1.0.0",
+  "description": "This project is being carried out for illustrative purposes only",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^7.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikkiwar/cinepolis-webscrpaing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikkiwar/cinepolis-webscrpaing/issues"
+  },
+  "homepage": "https://github.com/ikkiwar/cinepolis-webscrpaing#readme"
+}
