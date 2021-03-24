@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask_restful import Resource, Api
 import pymongo
 from bson.json_util import dumps
@@ -10,23 +10,16 @@ Data_Multi = []
 Data_VIP = []
 Data_SA = []
 
-MONGO_HOST = "localhost"
-MONGO_PUERTO = "27017"
-MONGO_TIEMPO_FUERA = 1000
-MONGO_URI = "mongodb://"+MONGO_HOST+":"+MONGO_PUERTO+"/"
-MONGO_BASEDATOS = "prueba"
-MONGO_COLECCION = "cine"
-
-cliente = pymongo.MongoClient(MONGO_URI, serverSelectionTimeoutMS=MONGO_TIEMPO_FUERA)
-baseDatos = cliente[MONGO_BASEDATOS]
-coleccion = baseDatos[MONGO_COLECCION]
+cliente = pymongo.MongoClient("mongodb+srv://root:12345@cluster0.hkrsn.mongodb.net/test")
+baseDatos = cliente["cinepolis"]
+coleccion = baseDatos["cine"]
 
 
 def getFecha():
-    data_galerias = coleccion.find({"cine": "Galerias", "fecha": "19-marzo-2021"})
-    data_multi = coleccion.find({"cine": "Multiplaza", "fecha": "19-marzo-2021"})
-    data_VIP = coleccion.find({"cine": "VIP Galerias", "fecha": "19-marzo-2021"})
-    data_sa = coleccion.find({"cine": "Santa Ana", "fecha": "19-marzo-2021"})
+    data_galerias = coleccion.find({"cine": "Galerias", "fecha": "18-marzo-2021"})
+    data_multi = coleccion.find({"cine": "Multiplaza", "fecha": "18-marzo-2021"})
+    data_VIP = coleccion.find({"cine": "VIP Galerias", "fecha": "18-marzo-2021"})
+    data_sa = coleccion.find({"cine": "Santa Ana", "fecha": "18-marzo-2021"})
 
     for galerias in data_galerias:
         Data_Galerias.append(galerias)
